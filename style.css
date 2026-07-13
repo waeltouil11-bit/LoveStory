@@ -498,3 +498,36 @@ padding:25px;
 }
 
 }
+/* =========================
+   PAGE FINALE
+========================= */
+
+#page6{
+
+background:rgba(0,0,0,.15);
+
+backdrop-filter:blur(10px);
+
+}
+
+#finalTitle{
+
+font-size:120px;
+
+margin-bottom:30px;
+
+animation:heartbeat 1.2s infinite;
+
+text-shadow:0 0 40px #ff4f8b;
+
+}
+
+#finalText{
+
+font-size:30px;
+
+line-height:55px;
+
+max-width:700px;
+
+}
