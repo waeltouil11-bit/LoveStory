@@ -105,3 +105,82 @@ document.getElementById("envelope").onclick=function(){
     showPage(page4);
 
 };
+// ======================================
+// LETTRE QUI S'ÉCRIT
+// ======================================
+
+const letterMessage =
+`Depuis que tu fais partie de ma vie,
+
+chaque journée est plus belle.
+
+Ton sourire illumine mes journées.
+
+Merci d'être toi. ❤️`;
+
+document.getElementById("btn3").onclick = function(){
+
+    showPage(page5);
+
+    createRoses();
+
+};
+
+// ======================================
+// EFFET MACHINE À ÉCRIRE POUR LA LETTRE
+// ======================================
+
+document.getElementById("envelope").addEventListener("click", ()=>{
+
+    const letter = document.getElementById("letterText");
+
+    letter.textContent = "";
+
+    let index = 0;
+
+    function writeLetter(){
+
+        if(index < letterMessage.length){
+
+            letter.textContent += letterMessage.charAt(index);
+
+            index++;
+
+            setTimeout(writeLetter,40);
+
+        }
+
+    }
+
+    setTimeout(writeLetter,500);
+
+});
+
+
+// ======================================
+// PLUIE DE ROSES
+// ======================================
+
+function createRoses(){
+
+    const roses = document.getElementById("roses");
+
+    roses.innerHTML="";
+
+    for(let i=0;i<25;i++){
+
+        const rose=document.createElement("div");
+
+        rose.className="rose";
+
+        rose.innerHTML="🌹";
+
+        rose.style.left=Math.random()*100+"%";
+
+        rose.style.animationDelay=(Math.random()*4)+"s";
+
+        roses.appendChild(rose);
+
+    }
+
+}
