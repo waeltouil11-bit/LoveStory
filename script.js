@@ -184,3 +184,89 @@ function createRoses(){
     }
 
 }
+// ======================================
+// BOUTON PAGE 5
+// ======================================
+
+document.getElementById("btn4").onclick = function(){
+
+    showPage(page6);
+
+    startHearts();
+
+    finalMessage();
+
+};
+
+
+// ======================================
+// COEURS FLOTTANTS
+// ======================================
+
+function startHearts(){
+
+    setInterval(()=>{
+
+        const heart=document.createElement("div");
+
+        heart.className="floating-heart";
+
+        heart.innerHTML="❤️";
+
+        heart.style.left=Math.random()*100+"vw";
+
+        heart.style.bottom="-50px";
+
+        heart.style.fontSize=(20+Math.random()*30)+"px";
+
+        document.body.appendChild(heart);
+
+        setTimeout(()=>{
+
+            heart.remove();
+
+        },6000);
+
+    },250);
+
+}
+
+
+// ======================================
+// MESSAGE FINAL
+// ======================================
+
+function finalMessage(){
+
+    const message=
+
+`Tu es la plus belle chose
+qui me soit arrivée.
+
+Merci pour tous ces moments.
+
+Je t'aime ❤️`;
+
+    const text=document.getElementById("finalText");
+
+    text.textContent="";
+
+    let i=0;
+
+    function write(){
+
+        if(i<message.length){
+
+            text.textContent+=message.charAt(i);
+
+            i++;
+
+            setTimeout(write,55);
+
+        }
+
+    }
+
+    write();
+
+}
